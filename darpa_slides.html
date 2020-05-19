@@ -27,44 +27,44 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Return Oriented Program Evolution with ROPER</h1><p class="date">Created: 2020-05-19 Tue 10:17</p>
+<section id="sec-title-slide"><h1 class="title">Return Oriented Program Evolution with ROPER</h1><p class="date">Created: 2020-05-19 Tue 13:01</p>
 </section>
 <section id="table-of-contents"><div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#/slide-org09dfe08"></a></li>
-<li><a href="#/slide-org4b32091">Introductory Remarks</a></li>
-<li><a href="#/slide-org9970589">The Concept of Return-Oriented Programming</a></li>
-<li><a href="#/slide-org838a94f">Genetic Programming</a></li>
-<li><a href="#/slide-org1afd2b7">Design and Implementation of ROPER</a></li>
-<li><a href="#/slide-org96b9c61">Experimental Studies</a></li>
-<li><a href="#/slide-orgdb7ec24">Questions?</a></li>
+<li><a href="#/slide-org80d147c"></a></li>
+<li><a href="#/slide-orgc70df98">Introductory Remarks</a></li>
+<li><a href="#/slide-org412cedf">The Concept of Return-Oriented Programming</a></li>
+<li><a href="#/slide-orgc94e15e">Genetic Programming</a></li>
+<li><a href="#/slide-orgeb35249">Design and Implementation of ROPER</a></li>
+<li><a href="#/slide-org9b04765">Experimental Studies</a></li>
+<li><a href="#/slide-orge9483c0">Questions?</a></li>
 </ul>
 </div>
 </div>
 </section>
 
 <section>
-<section id="slide-org09dfe08">
-<h2 id="org09dfe08"></h2>
+<section id="slide-org80d147c">
+<h2 id="org80d147c"></h2>
 <video controls> <source src="../../videos/roper-snek-misjax-35000.webm" type="video/webm"> </video>
 
 </section>
 </section>
 <section>
-<section id="slide-org4b32091" data-background="./img/roper.png" data-background-transition="fade">
-<h2 id="org4b32091">Introductory Remarks</h2>
+<section id="slide-orgc70df98" data-background="./img/roper.png" data-background-transition="fade">
+<h2 id="orgc70df98">Introductory Remarks</h2>
 </section>
 </section>
 <section>
-<section id="slide-org9970589">
-<h2 id="org9970589">The Concept of Return-Oriented Programming</h2>
-<div class="outline-text-2" id="text-org9970589">
+<section id="slide-org412cedf">
+<h2 id="org412cedf">The Concept of Return-Oriented Programming</h2>
+<div class="outline-text-2" id="text-org412cedf">
 </div>
 </section>
-<section id="slide-org73405bc">
-<h3 id="org73405bc">The Fundamental Problem of Cybersecurity</h3>
+<section id="slide-org7c09841">
+<h3 id="org7c09841">The Fundamental Problem of Cybersecurity</h3>
 <p>
 At bottom, there is no essential distinction between data and code.
 </p>
@@ -73,8 +73,8 @@ At bottom, there is no essential distinction between data and code.
 "Data" is just information your system trusts. 
 </p>
 </section>
-<section id="slide-orgf1c2a7d">
-<h3 id="orgf1c2a7d">The Stack</h3>
+<section id="slide-org7c0ed6b">
+<h3 id="org7c0ed6b">The Stack</h3>
 <div class="column" style="float:left; width: 50%">
 
 <div class="figure">
@@ -93,8 +93,8 @@ At bottom, there is no essential distinction between data and code.
 </div>
 
 </section>
-<section id="slide-orgf4cbea5">
-<h3 id="orgf4cbea5">The Stack, Smashed</h3>
+<section id="slide-org1507e1b">
+<h3 id="org1507e1b">The Stack, Smashed</h3>
 <div class="column" style="float:left; width: 50%">
 
 <div class="figure">
@@ -114,8 +114,8 @@ At bottom, there is no essential distinction between data and code.
 </div>
 
 </section>
-<section id="slide-org9148f58">
-<h3 id="org9148f58">\(\textit{DEP}~~/~~W \oplus X\)</h3>
+<section id="slide-orgab35e1f">
+<h3 id="orgab35e1f">\(\textit{DEP}~~/~~W \oplus X\)</h3>
 <div class="column" style="float:left; width: 50%">
 
 <div class="figure">
@@ -132,8 +132,8 @@ At bottom, there is no essential distinction between data and code.
 
 
 </section>
-<section id="slide-orge95c961">
-<h3 id="orge95c961">Subverting \(~~W\oplus X\)</h3>
+<section id="slide-orgff159ce">
+<h3 id="orgff159ce">Subverting \(~~W\oplus X\)</h3>
 <ul>
 <li class="fragment appear">\(W\oplus X\) may prevent the <i>execution</i> of input data, but it doesn't prevent attempts to <i>return</i> to that data.</li>
 <li class="fragment appear">Why should the hacker need to supply their own machine code?</li>
@@ -142,8 +142,8 @@ At bottom, there is no essential distinction between data and code.
 
 </ul>
 </section>
-<section id="slide-orgeaba43a">
-<h3 id="orgeaba43a">\(W\oplus X~~\) is a Leaky Abstraction</h3>
+<section id="slide-org7d74005">
+<h3 id="org7d74005">\(W\oplus X~~\) is a Leaky Abstraction</h3>
 <ul>
 <li class="fragment appear">It rests on all-too-narrow concepts of "instruction" and "execution".</li>
 <li class="fragment appear">The payload's <i>instructions</i> don't need to be bytes of machine code.</li>
@@ -151,8 +151,8 @@ At bottom, there is no essential distinction between data and code.
 
 </ul>
 </section>
-<section id="slide-orga7c7fb3">
-<h3 id="orga7c7fb3">So is the <i>Structured Programming Machine Model</i></h3>
+<section id="slide-org91055c9">
+<h3 id="org91055c9">So is the <i>Structured Programming Machine Model</i></h3>
 <ul>
 <li class="fragment appear">The machine model on which structured programming is based already carves up an executable into chunks that <b>return</b> control after being dispatched.</li>
 <li class="fragment appear">To the programmer, these are "functions", but this is too granular a viewpoint.</li>
@@ -162,8 +162,8 @@ At bottom, there is no essential distinction between data and code.
 </ul>
 
 </section>
-<section id="slide-orgc56e40f">
-<h3 id="orgc56e40f">The ROVM supervenes on the SPMM</h3>
+<section id="slide-orgf7bf55b">
+<h3 id="orgf7bf55b">The ROVM supervenes on the SPMM</h3>
 <div class="column" style="float:left; width: 50%">
 
 <div class="figure">
@@ -181,8 +181,8 @@ At bottom, there is no essential distinction between data and code.
 </div>
 
 </section>
-<section id="slide-orga29557f">
-<h3 id="orga29557f">We can program this machine with input data</h3>
+<section id="slide-orga7749a7">
+<h3 id="orga7749a7">We can program this machine with input data</h3>
 <ul>
 <li>All we need to do is to discover and supply a buffer of instructions.</li>
 <li>These are not instructions for the underlying architecture, but for the ROVM.</li>
@@ -193,13 +193,13 @@ At bottom, there is no essential distinction between data and code.
 </section>
 </section>
 <section>
-<section id="slide-org838a94f">
-<h2 id="org838a94f">Genetic Programming</h2>
-<div class="outline-text-2" id="text-org838a94f">
+<section id="slide-orgc94e15e">
+<h2 id="orgc94e15e">Genetic Programming</h2>
+<div class="outline-text-2" id="text-orgc94e15e">
 </div>
 </section>
-<section id="slide-org7a2e89b">
-<h3 id="org7a2e89b"><span class="todo TODO">TODO</span> Genetic Algorithms</h3>
+<section id="slide-org827c9a0">
+<h3 id="org827c9a0"><span class="todo TODO">TODO</span> Genetic Algorithms</h3>
 <ul>
 <li>Variation (mutation and crossover)</li>
 <li>Selection (fitness function)</li>
@@ -208,8 +208,8 @@ At bottom, there is no essential distinction between data and code.
 </ul>
 
 </section>
-<section id="slide-orgf12c83b">
-<h3 id="orgf12c83b">Genotype \(\rightarrow\) Phenotype</h3>
+<section id="slide-org64cb84e">
+<h3 id="org64cb84e">Genotype \(\rightarrow\) Phenotype</h3>
 <ul>
 <li>Genetic programming turns on an analogy between genotype \(\rightarrow\) phenotype maps on the one hand, and, on the other, the relation between a program's syntax and its operational semantics.</li>
 <li>The syntactical representation of a program is its genotype, and its semantic behaviour is its phenotype.</li>
@@ -217,8 +217,8 @@ At bottom, there is no essential distinction between data and code.
 </ul>
 
 </section>
-<section id="slide-org6976965">
-<h3 id="org6976965">Exploring Weird Machines through Genetic Programming</h3>
+<section id="slide-org12b6bce">
+<h3 id="org12b6bce">Exploring Weird Machines through Genetic Programming</h3>
 <ul>
 <li>We are often going, blind, into terra incognita.</li>
 <li>Evolutionary computation has shown surprising creativity
@@ -230,8 +230,8 @@ exposed by many WMs, ROP included, make them difficult for humans to reason abou
 </ul>
 
 </section>
-<section id="slide-org5908d3c">
-<h3 id="org5908d3c">Challenges that ROP exploration poses for GP</h3>
+<section id="slide-org20426d4">
+<h3 id="org20426d4">Challenges that ROP exploration poses for GP</h3>
 <ul>
 <li>GP typically employs highly specialized and parsimonious virtual machines,
 tailored to the problem set in question.</li>
@@ -246,13 +246,13 @@ tailored to the problem set in question.</li>
 </section>
 </section>
 <section>
-<section id="slide-org1afd2b7">
-<h2 id="org1afd2b7">Design and Implementation of ROPER</h2>
-<div class="outline-text-2" id="text-org1afd2b7">
+<section id="slide-orgeb35249">
+<h2 id="orgeb35249">Design and Implementation of ROPER</h2>
+<div class="outline-text-2" id="text-orgeb35249">
 </div>
 </section>
-<section id="slide-org9b691dc">
-<h3 id="org9b691dc">Bird's eye view</h3>
+<section id="slide-org6b98927">
+<h3 id="org6b98927">Bird's eye view</h3>
 
 <div class="figure">
 <p><img src="./img/birdseye_white.png" alt="birdseye_white.png" />
@@ -260,8 +260,8 @@ tailored to the problem set in question.</li>
 </div>
 
 </section>
-<section id="slide-orgbb1d62d">
-<h3 id="orgbb1d62d">Tournament Selection</h3>
+<section id="slide-org9255c91">
+<h3 id="org9255c91">Tournament Selection</h3>
 
 <div class="figure">
 <p><img src="./img/tournament.png" alt="tournament.png" />
@@ -269,8 +269,8 @@ tailored to the problem set in question.</li>
 </div>
 
 </section>
-<section id="slide-orgc1dd05d">
-<h3 id="orgc1dd05d">Genomic Structure</h3>
+<section id="slide-orgca123c1">
+<h3 id="orgca123c1">Genomic Structure</h3>
 <ul>
 <li class="fragment appear">Each genome is a one-dimensional <i>chain</i> composed of <i>clumps</i>.</li>
 <li class="fragment appear">A <i>clump</i> is a gadget address \(a\), followed by \(\texttt{SP}_\Delta(a)-1\) machine words</li>
@@ -280,8 +280,8 @@ tailored to the problem set in question.</li>
 </ul>
 
 </section>
-<section id="slide-org49c4a93">
-<h3 id="org49c4a93">Genetic Operators: Clumpwise Mutation</h3>
+<section id="slide-org04a90cb">
+<h3 id="org04a90cb">Genetic Operators: Clumpwise Mutation</h3>
 <ul>
 <li class="fragment appear">address substitution</li>
 <li class="fragment appear">arithmetical &amp; logical manipulation of dwords</li>
@@ -291,8 +291,8 @@ tailored to the problem set in question.</li>
 </ul>
 
 </section>
-<section id="slide-org9568ba2">
-<h3 id="org9568ba2">Genetic Operators: Chainwise Crossover</h3>
+<section id="slide-org302a5cd">
+<h3 id="org302a5cd">Genetic Operators: Chainwise Crossover</h3>
 <ul>
 <li class="fragment appear">restricted to single-point crossover</li>
 <li class="fragment appear">splice point selected by weighted random choice, using the average of each link's previous hosts' fitness scores, to favour adaptive gene linkage</li>
@@ -304,13 +304,13 @@ tailored to the problem set in question.</li>
 </section>
 </section>
 <section>
-<section id="slide-org96b9c61">
-<h2 id="org96b9c61">Experimental Studies</h2>
-<div class="outline-text-2" id="text-org96b9c61">
+<section id="slide-org9b04765">
+<h2 id="org9b04765">Experimental Studies</h2>
+<div class="outline-text-2" id="text-org9b04765">
 </div>
 </section>
-<section id="slide-org59e6178">
-<h3 id="org59e6178">Tasks and Fitness Functions</h3>
+<section id="slide-org1fb9447">
+<h3 id="org1fb9447">Tasks and Fitness Functions</h3>
 <ul>
 <li class="fragment appear">An arbitrary and inscrutable fitness function</li>
 <li class="fragment appear">System call preparation</li>
@@ -325,8 +325,8 @@ tailored to the problem set in question.</li>
 </ul>
 
 </section>
-<section id="slide-org3530e48">
-<h4 id="org3530e48">System Call Preparation</h4>
+<section id="slide-org41dc5ee">
+<h4 id="org41dc5ee">System Call Preparation</h4>
 <ul>
 <li class="fragment appear">The goal here is to prepare the CPU for a system call, with the registers containing and pointing to the necessary arguments.</li>
 <li class="fragment appear">The fitness function uses a combination of numerical distance and bitwise hamming distance, for immediate values, and memory proximity for indirect values.</li>
@@ -336,8 +336,8 @@ tailored to the problem set in question.</li>
 
 
 </section>
-<section id="slide-org24586fc">
-<h4 id="org24586fc">System Call Preparation</h4>
+<section id="slide-org8d27cf8">
+<h4 id="org8d27cf8">System Call Preparation</h4>
 <p>
 Champion of the <i>Wiwzuh</i> population:
 </p>
@@ -366,8 +366,8 @@ Champion of the <i>Wiwzuh</i> population:
 </div>
 
 </section>
-<section id="slide-org28cd763">
-<h4 id="org28cd763">Historical Profile of the <i>Wiwzuh</i> population</h4>
+<section id="slide-orgb90d930">
+<h4 id="orgb90d930">Historical Profile of the <i>Wiwzuh</i> population</h4>
 
 <div class="figure">
 <p><img src="./img/wiwzuh_syscall_gaussian_3.png" alt="wiwzuh_syscall_gaussian_3.png" />
@@ -375,8 +375,8 @@ Champion of the <i>Wiwzuh</i> population:
 </div>
 
 </section>
-<section id="slide-org80ab80c">
-<h3 id="org80ab80c">The Enigma of Stray Gadgets</h3>
+<section id="slide-org68993ac">
+<h3 id="org68993ac">The Enigma of Stray Gadgets</h3>
 <ul>
 <li class="fragment appear">This task also produced a number of specimens whose traces are too long and complex to display in detail here, but which were especially interesting for their labyrinthine nature, and the degree to which their execution traces strayed from the harvested gadget set.</li>
 <li class="fragment appear">I will nevertheless <b>try</b> to display one here.</li>
@@ -384,12 +384,12 @@ Champion of the <i>Wiwzuh</i> population:
 </ul>
 
 </section>
-<section id="slide-orgde25d09" data-background="./img/labyrinthine.png" data-background-size="1024px">
-<h4 id="orgde25d09">The Enigma of Stray Gadgets</h4>
+<section id="slide-org590d2de" data-background="./img/labyrinthine.png" data-background-size="1024px">
+<h4 id="org590d2de"></h4>
 
 </section>
-<section id="slide-orgf253ce4">
-<h4 id="orgf253ce4">The Enigma of Stray Gadgets</h4>
+<section id="slide-org4519bb1">
+<h4 id="org4519bb1">The Enigma of Stray Gadgets</h4>
 <p>
 These were of interest in two respects:
 </p>
@@ -401,8 +401,8 @@ These were of interest in two respects:
 </ul>
 
 </section>
-<section id="slide-orgd1b96de">
-<h3 id="orgd1b96de">The Environment</h3>
+<section id="slide-org12d7873">
+<h3 id="org12d7873">The Environment</h3>
 
 <div class="figure">
 <p><img src="./img/tomato-RT-N18U-httpd_heatmap.png" alt="tomato-RT-N18U-httpd_heatmap.png" />
@@ -414,8 +414,8 @@ Distribution of gadgets in <code>tomato-RT-N18U-httpd</code>.
 </p>
 
 </section>
-<section id="slide-org8e66957">
-<h3 id="org8e66957">The Use of the Environment</h3>
+<section id="slide-org69ddfc0">
+<h3 id="org69ddfc0">The Use of the Environment</h3>
 
 <div class="figure">
 <p><img src="./img/fimjek_heatmap_montage.png" alt="fimjek_heatmap_montage.png" />
@@ -424,8 +424,8 @@ Distribution of gadgets in <code>tomato-RT-N18U-httpd</code>.
 
 
 </section>
-<section id="slide-org1c1e76f">
-<h3 id="org1c1e76f">A simple classification task</h3>
+<section id="slide-org8fb54c6">
+<h3 id="org8fb54c6">A simple classification task</h3>
 <ul>
 <li class="fragment appear">For the classification tasks, I initially used a common, bid-based algorithm to map behaviour to classification decisions on data samples.</li>
 <li class="fragment appear">A set of output registers was mapped to the class list, and data was classified according to the register containing the greatest signed value.</li>
@@ -433,8 +433,8 @@ Distribution of gadgets in <code>tomato-RT-N18U-httpd</code>.
 </ul>
 
 </section>
-<section id="slide-orgbec87fc">
-<h4 id="orgbec87fc">Fair initial results</h4>
+<section id="slide-orgef039d6">
+<h4 id="orgef039d6">Fair initial results</h4>
 
 <div class="figure">
 <p><img src="./img/kathot_champion.png" alt="kathot_champion.png" />
@@ -442,8 +442,8 @@ Distribution of gadgets in <code>tomato-RT-N18U-httpd</code>.
 </div>
 
 </section>
-<section id="slide-orga866eb8">
-<h4 id="orga866eb8">An interesting case of malignancy</h4>
+<section id="slide-org74fe2d6">
+<h4 id="org74fe2d6">An interesting case of malignancy</h4>
 
 <div class="figure">
 <p><img src="./img/fizwej_perfect_crash.png" alt="fizwej_perfect_crash.png" />
@@ -455,8 +455,8 @@ Here, the gene responsible for correct classification of the data was also respo
 </p>
 
 </section>
-<section id="slide-orge576f90">
-<h4 id="orge576f90">An interesting case of malignancy</h4>
+<section id="slide-orgbc7f026">
+<h4 id="orgbc7f026">An interesting case of malignancy</h4>
 
 <div class="figure">
 <p><img src="./img/fizwej-badgenes.png" alt="fizwej-badgenes.png" />
@@ -464,8 +464,8 @@ Here, the gene responsible for correct classification of the data was also respo
 </div>
 
 </section>
-<section id="slide-orgbc9451c">
-<h4 id="orgbc9451c">The Iris Dataset</h4>
+<section id="slide-orgaca7856">
+<h4 id="orgaca7856">The Iris Dataset</h4>
 
 <div class="figure">
 <p><img src="./img/iris_plot.png" alt="iris_plot.png" />
@@ -473,8 +473,8 @@ Here, the gene responsible for correct classification of the data was also respo
 </div>
 
 </section>
-<section id="slide-orgb634158">
-<h4 id="orgb634158">ROPER on the Iris Dataset</h4>
+<section id="slide-org0b4ea46">
+<h4 id="org0b4ea46">ROPER on the Iris Dataset</h4>
 <ul>
 <li class="fragment appear">This dataset proved a serious challenge for ROPER, which rarely achieved better than a 66% detection rate (using the bid-bin method).</li>
 <li class="fragment appear">Success only came with the introduction of a fitness sharing mechanism.</li>
@@ -482,8 +482,8 @@ Here, the gene responsible for correct classification of the data was also respo
 </ul>
 
 </section>
-<section id="slide-orgf31d3cc">
-<h4 id="orgf31d3cc">Iris without Fitness Sharing</h4>
+<section id="slide-org3243e5c">
+<h4 id="org3243e5c">Iris without Fitness Sharing</h4>
 
 <div class="figure">
 <p><img src="./img/nosharing.png" alt="nosharing.png" />
@@ -491,8 +491,8 @@ Here, the gene responsible for correct classification of the data was also respo
 </div>
 
 </section>
-<section id="slide-orgd5d5e00">
-<h4 id="orgd5d5e00">Iris with Fitness Sharing</h4>
+<section id="slide-orgc01c3c8">
+<h4 id="orgc01c3c8">Iris with Fitness Sharing</h4>
 
 <div class="figure">
 <p><img src="./img/sharing.png" alt="sharing.png" />
@@ -500,8 +500,8 @@ Here, the gene responsible for correct classification of the data was also respo
 </div>
 
 </section>
-<section id="slide-org2383b75">
-<h4 id="org2383b75">Iris as Classified by ROPER</h4>
+<section id="slide-org5c7d82b">
+<h4 id="org5c7d82b">Iris as Classified by ROPER</h4>
 
 <div class="figure">
 <p><img src="./img/iris_with_luxxyn.png" alt="iris_with_luxxyn.png" />
@@ -511,8 +511,8 @@ Here, the gene responsible for correct classification of the data was also respo
 </section>
 </section>
 <section>
-<section id="slide-orgdb7ec24" data-background="./img/roper.png" data-background-transition="fade">
-<h2 id="orgdb7ec24">Questions?</h2>
+<section id="slide-orge9483c0" data-background="./img/roper.png" data-background-transition="fade">
+<h2 id="orge9483c0">Questions?</h2>
 </section>
 </section>
 </div>

@@ -197,7 +197,7 @@ Champion of the /Wiwzuh/ population:
  - This task also produced a number of specimens whose traces are too long and complex to display in detail here, but which were especially interesting for their labyrinthine nature, and the degree to which their execution traces strayed from the harvested gadget set.
  - I will nevertheless *try* to display one here. 
 
-*** The Enigma of Stray Gadgets
+*** 
     :PROPERTIES:
     :reveal_background: ./img/labyrinthine.png
     :reveal_background_size: 1024px
