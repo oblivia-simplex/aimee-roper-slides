@@ -208,7 +208,11 @@ These were of interest in two respects:
  
 #+ATTR_REVEAL: :frag (appear)
 - they contained complex /heuristic breakers/ making them likely to bypass various IDS systems in the literature, as a sheer evolutionary /spandrel/
-- theoretically, their behaviour was enigmatic. Straying is dangerous for chains, and comes with great risk of crashing, yet it appeared with /prima facie/ improbable frequency in our populations. 
+- theoretically, their behaviour was enigmatic. Straying is dangerous for chains, and comes with great risk of crashing, yet it appeared with /prima facie/ improbable frequency in our populations.
+
+*** What's happening here?
+- Consider Banzhaf's explanation for introns in GP
+
 
 ** The Environment
 [[./img/tomato-RT-N18U-httpd_heatmap.png]]
