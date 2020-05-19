@@ -211,6 +211,7 @@ These were of interest in two respects:
 - theoretically, their behaviour was enigmatic. Straying is dangerous for chains, and comes with great risk of crashing, yet it appeared with /prima facie/ improbable frequency in our populations.
 
 *** What's happening here?
+
 #+ATTR_REVEAL: :frag (appear)
 - Consider Banzhaf's explanation for introns in GP
 - "Straying" reduces reliance on large swathes of genetic material, protecting genes from injurious crossover and mutation effects.
