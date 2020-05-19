@@ -212,7 +212,8 @@ These were of interest in two respects:
 
 *** What's happening here?
 - Consider Banzhaf's explanation for introns in GP
-
+- "Straying" reduces reliance on large swathes of genetic material, protecting genes from injurious crossover and mutation effects.
+- Once a gene line has discovered "stray" gadgets in its environment, that line becomes substantially more robust.
 
 ** The Environment
 [[./img/tomato-RT-N18U-httpd_heatmap.png]]
