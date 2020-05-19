@@ -223,6 +223,8 @@ These were of interest in two respects:
 Distribution of gadgets in =tomato-RT-N18U-httpd=.
 
 ** The Use of the Environment
+
+** 
 [[./img/fimjek_heatmap_montage.png]]
 
 
