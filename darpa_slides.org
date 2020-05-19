@@ -2,14 +2,14 @@
 #+OPTIONS: toc:1 num:nil
 #+REVEAL_EXTRA_CSS: ./modifications.css
 
-* 
-#+REVEAL_HTML: <video controls> <source src="../../videos/roper-snek-misjax-35000.webm" type="video/webm"> </video>
 
 * Introductory Remarks
 :PROPERTIES:
 :reveal_background: ./img/roper.png
 :reveal_background_trans: fade
 :END:
+** 
+#+REVEAL_HTML: <video controls> <source src="../../videos/roper-snek-misjax-35000.webm" type="video/webm"> </video>
 * The Concept of Return-Oriented Programming
 ** The Fundamental Problem of Cybersecurity
 At bottom, there is no essential distinction between data and code.
